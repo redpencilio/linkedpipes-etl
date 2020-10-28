@@ -13,8 +13,7 @@ version: '3'
 services:
   storage:
     build:
-      context: ./
-      dockerfile: storage/Dockerfile
+      context: https://github.com/linkedpipes/etl.git#${LP_ETL_BUILD_BRANCH-master}:storage
       args:
         LP_ETL_BUILD_BRANCH: ${LP_ETL_BUILD_BRANCH-master}
         LP_ETL_BUILD_JAVA_TEST: ${LP_ETL_BUILD_JAVA_TEST--DskipTests}
@@ -29,8 +28,7 @@ services:
     restart: always
   frontend:
     build:
-      context: ./
-      dockerfile: frontend/Dockerfile
+      context: https://github.com/linkedpipes/etl.git#${LP_ETL_BUILD_BRANCH-master}:frontend
       args:
         LP_ETL_BUILD_BRANCH: ${LP_ETL_BUILD_BRANCH-master}
         LP_ETL_USER: ${LP_ETL_USER-5987}
@@ -44,8 +42,7 @@ services:
     restart: always
   executor-monitor:
     build:
-      context: ./
-      dockerfile: executor-monitor/Dockerfile
+      context: https://github.com/linkedpipes/etl.git#${LP_ETL_BUILD_BRANCH-master}:executor-monitor
       args:
         LP_ETL_BUILD_BRANCH: ${LP_ETL_BUILD_BRANCH-master}
         LP_ETL_BUILD_JAVA_TEST: ${LP_ETL_BUILD_JAVA_TEST--DskipTests}
@@ -60,8 +57,7 @@ services:
     restart: always
   executor:
     build:
-      context: ./
-      dockerfile: executor/Dockerfile
+      context: https://github.com/linkedpipes/etl.git#${LP_ETL_BUILD_BRANCH-master}:executor
       args:
         LP_ETL_BUILD_BRANCH: ${LP_ETL_BUILD_BRANCH-master}
         LP_ETL_BUILD_JAVA_TEST: ${LP_ETL_BUILD_JAVA_TEST--DskipTests}

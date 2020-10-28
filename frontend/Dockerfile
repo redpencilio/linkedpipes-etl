@@ -5,7 +5,7 @@ LABEL lp_project=etl
 RUN apk add --no-cache maven git
 WORKDIR /opt/lp/etl
 VOLUME ["/root/.m2/repository"]
-ADD . .
+RUN git clone --single-branch --branch $LP_ETL_BUILD_BRANCH https://github.com/redpencilio/linkedpipes-etl.git .
 RUN mvn install $LP_ETL_BUILD_JAVA_TEST -P "install-frontend"
 
 FROM node:12-alpine
