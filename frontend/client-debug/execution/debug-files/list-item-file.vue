@@ -1,19 +1,19 @@
 <template>
-  <v-list-tile
+  <v-list-item
     :key="value.name"
     @click="$emit('onNavigateTo', value)"
   >
-    <v-list-tile-avatar>
+    <v-list-item-avatar>
       <v-icon>note</v-icon>
-    </v-list-tile-avatar>
-    <v-list-tile-content>
-      <v-list-tile-title>
+    </v-list-item-avatar>
+    <v-list-item-content>
+      <v-list-item-title>
         {{ value.name }}
-      </v-list-tile-title>
-      <v-list-tile-sub-title>
+      </v-list-item-title>
+      <v-list-item-subtitle>
         {{ asHumanReadableSize(value.size) }}
-      </v-list-tile-sub-title>
-    </v-list-tile-content>
+      </v-list-item-subtitle>
+    </v-list-item-content>
     <v-btn
       :href="downloadUrl"
       target="_blank"
@@ -24,7 +24,7 @@
     >
       <v-icon>cloud_download</v-icon>
     </v-btn>
-  </v-list-tile>
+  </v-list-item>
 </template>
 
 <script>

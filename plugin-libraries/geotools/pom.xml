@@ -3,12 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.linkedpipes</groupId>
-        <artifactId>pom-plugin</artifactId>
-        <version>0.0.0</version>
-        <relativePath>../../pom-plugin/pom.xml</relativePath>
-    </parent>
+    <groupId>com.linkedpipes</groupId>
     <artifactId>geotools</artifactId>
     <version>21.0</version>
     <packaging>bundle</packaging>
@@ -21,20 +16,9 @@
 
     <repositories>
         <repository>
-            <id>boundless</id>
-            <name>Boundless Maven Repository</name>
-            <url>http://repo.boundlessgeo.com/main</url>
-        </repository>
-        <!-- Alternatives. -->
-        <repository>
-            <id>geomajas</id>
-            <name>Geomajas Repository</name>
-            <url>http://maven.geomajas.org/</url>
-        </repository>
-        <repository>
             <id>osgeo</id>
             <name>OSGeo Repository</name>
-            <url>https://download.osgeo.org/webdav/geotools/</url>
+            <url>https://repo.osgeo.org/repository/release/</url>
         </repository>
     </repositories>
 
@@ -173,7 +157,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>4.2.1</version>
+                <version>5.1.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -201,6 +185,13 @@
                         <Embed-Transitive>false</Embed-Transitive>
                     </instructions>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>biz.aQute.bnd</groupId>
+                        <artifactId>biz.aQute.bndlib</artifactId>
+                        <version>5.2.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

@@ -279,6 +279,7 @@ public class FieldLoaderTest {
         Assert.assertEquals(20, calendar.get(Calendar.DAY_OF_MONTH));
     }
 
+
     @Test(expected = RdfException.class)
     public void loadNestedCollection() throws Exception {
         TestClass instance = new TestClass();
