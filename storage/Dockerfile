@@ -4,7 +4,7 @@ ARG LP_ETL_BUILD_JAVA_TEST=-DskipTests
 LABEL lp_project=etl
 RUN apk add --no-cache maven git
 WORKDIR /opt/lp/etl
-RUN git clone --single-branch --branch $LP_ETL_BUILD_BRANCH https://github.com/redpencilio/linkedpipes-etl.git .
+ADD . .
 RUN mvn install $LP_ETL_BUILD_JAVA_TEST -P "install-executor,install-executor-monitor,install-storage,install-plugins"
 
 FROM openjdk:13-jdk-alpine
