@@ -1,10 +1,10 @@
 <lp-dialog-control-config lp-dialog="dialog" lp-application="application"></lp-dialog-control-config>
 <div>
-    <md-input-container class="md-block" ng-hide="dialog.uri.hide">
+    <md-input-container class="md-block" ng-hide="dialog.fileUri.hide">
         <label>File URL</label>
-        <input type="url" ng-model="dialog.uri.value"
+        <input type="url" ng-model="dialog.fileUri.value"
                placeholder="http://example.com/my.file"
-               ng-disabled="dialog.uri.disabled || dialog.uri.inherit"
+               ng-disabled="dialog.fileUri.disabled || dialog.fileUri.inherit"
                required>
     </md-input-container>
     <md-input-container class="md-block" ng-hide="dialog.fileName.hide">
